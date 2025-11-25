@@ -191,9 +191,6 @@ export const vendor = parallel(vendorStyles, vendorScripts);
 const pixelGlass = () => src(`node_modules/pixel-glass/{styles.css,script.js}`)
   .pipe(dest(`${dirs.dest}/static/pp/`))
 
-export const pp = () => src(`${dirs.src}/static/pp/*`)
-  .pipe(dest(`${dirs.dest}/static/pp/`))
-
 export const server = () => {
   const bs = browser.init({
     server: dirs.dest,
@@ -211,11 +208,11 @@ export const server = () => {
 /**
  * Задачи для разработки
  */
-export const start = series(clean, parallel(fonts, pixelGlass, pp), parallel(img, images, styles, templates, scripts, vendor, sprite), server);
+export const start = series(clean, parallel(fonts, pixelGlass), parallel(img, images, styles, templates, scripts, sprite), server);
 
 /**
  * Для билда
  */
-export const build = series(clean, fonts, parallel(img, images, styles, templates, scripts, vendor, sprite));
+export const build = series(clean, fonts, parallel(img, images, styles, templates, scripts, sprite));
 
 export default start;

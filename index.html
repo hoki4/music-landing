@@ -2,17 +2,17 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8">
     <title>Musify</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="page">
 
     <header class="header">
-        <a href="#" class="header__logo">
-            <img src="#" alt="Musify logo" class="header__logo-img">
+        <a class="logo" href="#">
+            <img src="#" alt="Musify logo">
         </a>
 
         <nav class="navigation">
@@ -23,8 +23,8 @@
 
         <div class="header__actions">
             <button class="header__button header__button--toggle" type="button" aria-label="Переключение темы"></button>
-            <a class="header__button" href="#" aria-label="Поиск"></a>
-            <a class="header__button" href="#" aria-label="Корзина"></a>
+            <a class="header__button" href="#" aria-label="Поиск">Search</a>
+            <a class="header__button" href="#" aria-label="Корзина">Cart</a>
             <a class="header__button" href="#">Login</a>
         </div>
 
@@ -35,34 +35,36 @@
                     Lorem ipsum dolor sit amet, consectetur adipiscing eat. Nunc pretium, pharetra nisl
                     elementum feugiat turpis risus faciasis erat. Commodo purus, eu sed suspendisse fermentum.</p>
                 <div class="hero__buttons">
-                    <a href="#" class="btn--primary">Shop now</a>
-                    <a href="#" class="btn--ghost">Add to cart</a>
+                    <a class="btn btn--primary" href="#">Shop now</a>
+                    <a class="btn btn--secondary" href="#">Add to cart</a>
                 </div>
 
                 <article class="offer-card">
-                    <img src="#" alt="Wireless headphones" class="offer-card__img">
+                    <img class="offer-card__img" src="#" alt="Wireless headphones">
                     <h2 class="offer-card__title">Wireless headphones</h2>
-                    <span class="offer-card__price">$120</span>
+                    <span class="offer-card__price">$120 <del>$185</del></span>
                 </article>
 
                 <article class="offer-card">
-                    <img src="#" alt="Wireless headphones" class="offer-card__img">
+                    <img class="offer-card__img" src="#" alt="Wireless headphones">
                     <h2 class="offer-card__title">Wireless headphones</h2>
-                    <span class="offer-card__price">$120</span>
+                    <span class="offer-card__price">$120 <del>$185</del></span>
                 </article>
 
                 <article class="offer-card">
-                    <img src="#" alt="Wireless headphones" class="offer-card__img">
+                    <img class="offer-card__img" src="#" alt="Wireless headphones">
                     <h2 class="offer-card__title">Wireless headphones</h2>
-                    <span class="offer-card__price">$120</span>
+                    <span class="offer-card__price">$120 <del>$185</del></span>
                 </article>
         </section>
     </header>
 
     <main class="main">
-        <h2 class="section__title">Popular Trends</h2>
+
+        <h2 class="title">Popular Trends</h2>
+
         <section class="card">
-            <img src="#" alt="Wireless Headphones" class="card__image">
+            <img class="card__image" src="#" alt="Wireless Headphones">
             <h2 class="card__title">Wireless Headphones with Dolby Surround Sound</h2>
             <ul class="card__features">
                 <li class="card__feature">Truely Wireless</li>
@@ -72,11 +74,11 @@
             </ul>
             <div class="card__footer">
                 <span class="card__price">$145</span>
-                <a href="#" class="btn btn--small btn--ghost">Buy now</a>
+                <a class="btn btn--small btn--ghost" href="#">Buy now</a>
             </div>
         </section>
         <section class="card">
-            <img src="#" alt="Wireless Headphones" class="card__image">
+            <img class="card__image" src="#" alt="Wireless Headphones">
             <h2 class="card__title">Wireless Headphones with Dolby Surround Sound</h2>
             <ul class="card__features">
                 <li class="card__feature">Truely Wireless</li>
@@ -86,11 +88,11 @@
             </ul>
             <div class="card__footer">
                 <span class="card__price">$145</span>
-                <a href="#" class="btn btn--small btn--ghost">Buy now</a>
+                <a class="btn btn--small btn--ghost" href="#">Buy now</a>
             </div>
         </section>
         <section class="card">
-            <img src="#" alt="Wireless Headphones" class="card__image">
+            <img class="card__image" src="#" alt="Wireless Headphones">
             <h2 class="card__title">Wireless Headphones with Dolby Surround Sound</h2>
             <ul class="card__features">
                 <li class="card__feature">Truely Wireless</li>
@@ -100,7 +102,7 @@
             </ul>
             <div class="card__footer">
                 <span class="card__price">$145</span>
-                <a href="#" class="btn btn--small btn--ghost">Buy now</a>
+                <a class="btn btn--small btn--secondary" href="#">Buy now</a>
             </div>
         </section>
 
@@ -116,7 +118,7 @@
         <section class="offer">
             <div class="offer__visual">
                 <span class="offer__badge-text">20% off</span>
-                <img src="#" alt="Offer headphones" class="offer__image">
+                <img class="offer__image" src="#" alt="Offer headphones">
             </div>
 
             <div class="offer__content">
@@ -133,7 +135,7 @@
                 </div>
 
                 <div class="offer__buttons">
-                    <a href="#" class="offer__button--ghost">View details</a>
+                    <a href="#" class="offer__button--secondary">View details</a>
                     <a href="#" class="offer__button--primary">Shop now</a>
                 </div>
             </div>
@@ -145,18 +147,18 @@
             </header>
 
             <div class="accessories__grid">
-                <article class="accessories__item">
-                    <img src="#" alt="Watch" class="accessories__image">
-                </article>
-                <article class="accessories__item">
-                    <img src="#" alt="Speakers" class="accessories__image">
-                </article>
-                <article class="accessories__item">
-                    <img src="#" alt="Smart speaker" class="accessories__image">
-                </article>
-                <article class="accessories__item">
-                    <img src="#" alt="Portable speaker" class="accessories__image">
-                </article>
+                <figure class="accessories__item">
+                    <img class="accessories__image" src="#" alt="Watch">
+                </figure>
+                <figure class="accessories__item">
+                    <img class="accessories__image" src="#" alt="Speakers">
+                </figure>
+                <figure class="accessories__item">
+                    <img class="accessories__image" src="#" alt="Smart speaker">
+                </figure>
+                <figure class="accessories__item">
+                    <img class="accessories__image" src="#" alt="Portable speaker">
+                </figure>
             </div>
 
         </section>
@@ -169,44 +171,44 @@
             <img src="#" alt="Wireless Headphones" class="card__image">
             <h2 class="card__title">Wireless Headphones with Dolby Surround Sound</h2>
             <ul class="card__features">
-                <li class="card__feature">Truely Wireless</li>
-                <li class="card__feature">Dolby Surround Sound</li>
-                <li class="card__feature">13hrs of playback time</li>
-                <li class="card__feature">Made in Germany</li>
+                <li>Truely Wireless</li>
+                <li>Dolby Surround Sound</li>
+                <li>13hrs of playback time</li>
+                <li">Made in Germany</li>
             </ul>
             <div class="card__footer">
                 <span class="card__price">$79.20</span>
-                <a href="#" class="btn btn--small btn--ghost">Buy now</a>
+                <a class="btn btn--small btn--secondary" href="#">Buy now</a>
             </div>
         </section>
 
         <section class="card">
-            <img src="#" alt="Wireless Headphones" class="card__image">
+            <img src="#" alt="Wireless Headphones">
             <h2 class="card__title">Wireless Headphones with Dolby Surround Sound</h2>
             <ul class="card__features">
-                <li class="card__feature">Truely Wireless</li>
-                <li class="card__feature">Dolby Surround Sound</li>
-                <li class="card__feature">13hrs of playback time</li>
-                <li class="card__feature">Made in Germany</li>
+                <li>Truely Wireless</li>
+                <li>Dolby Surround Sound</li>
+                <li>13hrs of playback time</li>
+                <li>Made in Germany</li>
             </ul>
             <div class="card__footer">
                 <span class="card__price">$79.20</span>
-                <a href="#" class="btn btn--small btn--ghost">Buy now</a>
+                <a class="btn btn--small btn--secondary" href="#">Buy now</a>
             </div>
         </section>
 
         <section class="card">
-            <img src="#" alt="Wireless Headphones" class="card__image">
+            <img src="#" alt="Wireless Headphones">
             <h2 class="card__title">Wireless Headphones with Dolby Surround Sound</h2>
             <ul class="card__features">
-                <li class="card__feature">Truely Wireless</li>
-                <li class="card__feature">Dolby Surround Sound</li>
-                <li class="card__feature">13hrs of playback time</li>
-                <li class="card__feature">Made in Germany</li>
+                <li>Truely Wireless</li>
+                <li>Dolby Surround Sound</li>
+                <li>13hrs of playback time</li>
+                <li>Made in Germany</li>
             </ul>
             <div class="card__footer">
                 <span class="card__price">$79.20</span>
-                <a href="#" class="btn btn--small btn--ghost">Buy now</a>
+                <a class="btn btn--small btn--secondary" href="#">Buy now</a>
             </div>
         </section>
 
@@ -224,36 +226,38 @@
     </main>
 
     <footer class="footer">
-        <img src="#" alt="Musify logo" class="footer__logo-img">
+        <a class="logo" href="#">
+            <img src="#" alt="Musify logo">
+        </a>
         <section class="footer__column">
             <h2 class="footer__title">Shop</h2>
-            <a class="footer__item" href="#">Wireless</a>
-            <a class="footer__item" href="#">Headphone</a>
-            <a class="footer__item" href="#">Gaming</a>
-            <a class="footer__item" href="#">Speakers</a>
-            <a class="footer__item" href="#">Soundbars</a>
-            <a class="footer__item" href="#">Professional</a>
-            <a class="footer__item" href="#">Offer Zone</a>
+            <a class="footer__link" href="#">Wireless</a>
+            <a class="footer__link" href="#">Headphone</a>
+            <a class="footer__link" href="#">Gaming</a>
+            <a class="footer__link" href="#">Speakers</a>
+            <a class="footer__link" href="#">Soundbars</a>
+            <a class="footer__link" href="#">Professional</a>
+            <a class="footer__link" href="#">Offer Zone</a>
         </section>
 
         <section class="footer__column">
             <h2 class="footer__title">Support</h2>
-            <a class="footer__item" href="#">Order Status</a>
-            <a class="footer__item" href="#">Bulk Purchase Program</a>
-            <a class="footer__item" href="#">Buy Authentic</a>
-            <a class="footer__item" href="#">Product Support</a>
-            <a class="footer__item" href="#">Shipping &amp; Delivery</a>
-            <a class="footer__item" href="#">Cancellation &amp; Refund Policy</a>
-            <a class="footer__item" href="#">Service Center</a>
+            <a class="footer__link" href="#">Order Status</a>
+            <a class="footer__link" href="#">Bulk Purchase Program</a>
+            <a class="footer__link" href="#">Buy Authentic</a>
+            <a class="footer__link" href="#">Product Support</a>
+            <a class="footer__link" href="#">Shipping &amp; Delivery</a>
+            <a class="footer__link" href="#">Cancellation &amp; Refund Policy</a>
+            <a class="footer__link" href="#">Service Center</a>
         </section>
 
         <section class="footer__column">
             <h2 class="footer__title">About us</h2>
-            <a class="footer__item" href="#">Harman Corporate</a>
-            <a class="footer__item" href="#">Privacy Policy</a>
-            <a class="footer__item" href="#">Terms of Use</a>
-            <a class="footer__item" href="#">Why Buy Direct</a>
-            <a class="footer__item" href="#">JBL Sound Partners</a>
+            <a class="footer__link" href="#">Harman Corporate</a>
+            <a class="footer__link" href="#">Privacy Policy</a>
+            <a class="footer__link" href="#">Terms of Use</a>
+            <a class="footer__link" href="#">Why Buy Direct</a>
+            <a class="footer__link" href="#">JBL Sound Partners</a>
             <h3 class="footer__title">Contact Us</h3>
             <p class="footer__text">1800-102-0525</p>
             <p class="footer__text">Mon–Sun-10AM–7PM</p>
@@ -265,17 +269,16 @@
             <h2 class="footer__title">Subscribe to our Newsletter</h2>
             <form class="footer__form">
                 <label class="footer__form-field">
-                    <input type="email" class="footer__input" placeholder="Enter your mail" required>
+                    <input class="footer__input" type="email" placeholder="Enter your mail id" required>
                 </label>
                 <button class="footer__button" type="submit">Subscribe</button>
             </form>
 
             <div class="footer__social">
                 <h2 class="footer__title">Share on Social Media</h2>
-                <a class="footer__social-item" href="#" aria-label="Facebook"></a>
-                <a class="footer__social-item" href="#" aria-label="Twitter"></a>
-                <a class="footer__social-item" href="#" aria-label="Instagram"></a>
-                <a class="footer__social-item" href="#" aria-label="YouTube"></a>
+                <a class="footer__social-link" href="#" aria-label="Google"></a>
+                <a class="footer__social-link" href="#" aria-label="Instagram"></a>
+                <a class="footer__social-link" href="#" aria-label="Twitter"></a>
             </div>
         </section>
 

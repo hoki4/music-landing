@@ -1,0 +1,143 @@
+{%- from "macros/routes.j2" import "url_for" -%}
+{%- from "macros/svg.j2" import "icon" -%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ site_name }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.min.css') }}">
+  <meta name="description" content="{{ meta_desctiption }}">
+</head>
+
+<body>
+  <header class="header">
+    <div class="header__wrap">
+      <a href="#" class="header__logo">
+        <img src="#" alt="Musify logo" class="header__logo-img">
+      </a>
+
+      <nav class="navigation">
+        <a class="navigation__link navigation__link--active" href="#">Home</a>
+        <a class="navigation__link" href="#">Explore</a>
+        <a class="navigation__link" href="#">Contact Us</a>
+      </nav>
+
+      <div class="header__actions">
+        <button class="header__button header__button--toggle" type="button" aria-label="Переключение темы"></button>
+        <a class="header__button" href="#" aria-label="Поиск"></a>
+        <a class="header__button" href="#" aria-label="Корзина"></a>
+        <a class="header__button" href="#">Login</a>
+      </div>
+
+      <section class="hero">
+        <div class="hero__content">
+          <h1 class="hero__title">Let`s Dive in Music World</h1>
+          <p class="hero__text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing eat. Nunc pretium, pharetra nisl
+            elementum feugiat turpis risus faciasis erat. Commodo purus, eu sed suspendisse fermentum.</p>
+          <div class="hero__buttons">
+            <a href="#" class="btn--primary">Shop now</a>
+            <a href="#" class="btn--ghost">Add to cart</a>
+          </div>
+
+          <article class="offer-card">
+            <img src="#" alt="Wireless headphones" class="offer-card__img">
+            <h2 class="offer-card__title">Wireless headphones</h2>
+            <span class="offer-card__price">$120</span>
+          </article>
+
+          <article class="offer-card">
+            <img src="#" alt="Wireless headphones" class="offer-card__img">
+            <h2 class="offer-card__title">Wireless headphones</h2>
+            <span class="offer-card__price">$120</span>
+          </article>
+
+          <article class="offer-card">
+            <img src="#" alt="Wireless headphones" class="offer-card__img">
+            <h2 class="offer-card__title">Wireless headphones</h2>
+            <span class="offer-card__price">$120</span>
+          </article>
+      </section>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="main__wrap">
+      {% block content %}{% endblock content %}
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__wrap">
+      <img src="#" alt="Musify logo" class="footer__logo-img">
+      <section class="footer__column">
+        <h2 class="footer__title">Shop</h2>
+        <a class="footer__item" href="#">Wireless</a>
+        <a class="footer__item" href="#">Headphone</a>
+        <a class="footer__item" href="#">Gaming</a>
+        <a class="footer__item" href="#">Speakers</a>
+        <a class="footer__item" href="#">Soundbars</a>
+        <a class="footer__item" href="#">Professional</a>
+        <a class="footer__item" href="#">Offer Zone</a>
+      </section>
+
+      <section class="footer__column">
+        <h2 class="footer__title">Support</h2>
+        <a class="footer__item" href="#">Order Status</a>
+        <a class="footer__item" href="#">Bulk Purchase Program</a>
+        <a class="footer__item" href="#">Buy Authentic</a>
+        <a class="footer__item" href="#">Product Support</a>
+        <a class="footer__item" href="#">Shipping &amp; Delivery</a>
+        <a class="footer__item" href="#">Cancellation &amp; Refund Policy</a>
+        <a class="footer__item" href="#">Service Center</a>
+      </section>
+
+      <section class="footer__column">
+        <h2 class="footer__title">About us</h2>
+        <a class="footer__item" href="#">Harman Corporate</a>
+        <a class="footer__item" href="#">Privacy Policy</a>
+        <a class="footer__item" href="#">Terms of Use</a>
+        <a class="footer__item" href="#">Why Buy Direct</a>
+        <a class="footer__item" href="#">JBL Sound Partners</a>
+        <h3 class="footer__title">Contact Us</h3>
+        <p class="footer__text">1800-102-0525</p>
+        <p class="footer__text">Mon–Sun-10AM–7PM</p>
+        <h4 class="footer_title">Manufactured by:</h4>
+        <p class="footer__text"> Harman International Industries, Inc.8500, Balboa Blvd, Northridge, CA 91329,USA
+      </section>
+
+      <section class="footer__column">
+        <h2 class="footer__title">Subscribe to our Newsletter</h2>
+        <form class="footer__form">
+          <label class="footer__form-field">
+            <input type="email" class="footer__input" placeholder="Enter your mail" required>
+          </label>
+          <button class="footer__button" type="submit">Subscribe</button>
+        </form>
+
+        <div class="footer__social">
+          <h2 class="footer__title">Share on Social Media</h2>
+          <a class="footer__social-item" href="#" aria-label="Facebook"></a>
+          <a class="footer__social-item" href="#" aria-label="Twitter"></a>
+          <a class="footer__social-item" href="#" aria-label="Instagram"></a>
+          <a class="footer__social-item" href="#" aria-label="YouTube"></a>
+        </div>
+      </section>
+
+      <div class="footer__bottom">
+        <p class="footer__copy">©2022.Musify.All Rights Reserved</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    console.log('Привет из инлайн-скрипта, отрабатывает на всех страницах.');
+  </script>
+  <script src="{{ url_for('static', filename='js/script.min.js') }}"></script>
+
+  {% block js %}{% endblock js %}
+</body>
+
+</html>

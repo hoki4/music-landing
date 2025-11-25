@@ -1,0 +1,161 @@
+{% extends "base.j2" %}
+{% from "macros/svg.j2" import icon %}
+{% from "macros/routes.j2" import url_for %}
+
+{% set page = "index" %}
+
+{% block content %}
+<h2 class="section__title">Popular Trends</h2>
+{% set cards = [{
+'title': 'Wireless Headphones with Dolby Surround Sound',
+'features': ['Truely Wireless23', 'Dolby Surround Sound', '13hrs of playback time', 'Made in Germany'],
+'price': '$145'
+}, {
+'title': 'Wireless Headphones with Dolby Surround Sound',
+'features': ['Truely Wireless', 'Dolby Surround Sound', '13hrs of playback time', 'Made in Germany'],
+'price': '$245'
+}, {
+'title': 'Wireless Headphones with Dolby Surround Sound',
+'features': ['Truely Wireless', 'Dolby Surround Sound', '13hrs of playback time', 'Made in Germany'],
+'price': '$345'
+}] %}
+{% for card in cards %}
+<section class="card">
+  <img src="#" alt="Wireless Headphones" class="card__image">
+  <h2 class="card__title">{{ card.title }}</h2>
+  <ul class="card__features">
+    {% for feature in card.features %}
+    <li class="card__feature">{{ feature }}</li>
+    {% endfor %}
+  </ul>
+  <div class="card__footer">
+    <span class="card__price">{{ card.price }}</span>
+    <a href="#" class="btn btn--small btn--ghost">Buy now</a>
+  </div>
+</section>
+{% endfor %}
+
+<section class="benefits">
+  <span class="benefit__icon"></span>
+  <h2 class="benefit__title">Free delivery</h2>
+  <span class="benefit__icon "></span>
+  <h2 class="benefit__title">Verified Products</h2>
+  <span class="benefit__icon"></span>
+  <h2 class="benefit__title">24/7 Customer support</h2>
+</section>
+
+<section class="offer">
+  <div class="offer__visual">
+    <span class="offer__badge-text">20% off</span>
+    <img src="#" alt="Offer headphones" class="offer__image">
+  </div>
+
+  <div class="offer__content">
+    <h2 class="section__title">Exclusive Offer</h2>
+    <p class="offer__subtitle">Offer ends in</p>
+
+    <div class="offer__timer">
+      <span class="offer__timer-value">02</span>
+      <span class="offer__timer-label">Hour</span>
+      <span class="offer__timer-value">38</span>
+      <span class="offer__timer-label">Mins</span>
+      <span class="offer__timer-value">49</span>
+      <span class="offer__timer-label">Secs</span>
+    </div>
+
+    <div class="offer__buttons">
+      <a href="#" class="offer__button--ghost">View details</a>
+      <a href="#" class="offer__button--primary">Shop now</a>
+    </div>
+  </div>
+</section>
+
+<section class="accessories">
+  <header class="section__header">
+    <h2 class="section__title">Try our other Accessories</h2>
+  </header>
+
+  <div class="accessories__grid">
+    <article class="accessories__item">
+      <img src="#" alt="Watch" class="accessories__image">
+    </article>
+    <article class="accessories__item">
+      <img src="#" alt="Speakers" class="accessories__image">
+    </article>
+    <article class="accessories__item">
+      <img src="#" alt="Smart speaker" class="accessories__image">
+    </article>
+    <article class="accessories__item">
+      <img src="#" alt="Portable speaker" class="accessories__image">
+    </article>
+  </div>
+
+</section>
+
+<header class="section__header">
+  <h2 class="section__title">New Arrivals</h2>
+</header>
+
+<section class="card">
+  <img src="#" alt="Wireless Headphones" class="card__image">
+  <h2 class="card__title">Wireless Headphones with Dolby Surround Sound</h2>
+  <ul class="card__features">
+    <li class="card__feature">Truely Wireless</li>
+    <li class="card__feature">Dolby Surround Sound</li>
+    <li class="card__feature">13hrs of playback time</li>
+    <li class="card__feature">Made in Germany</li>
+  </ul>
+  <div class="card__footer">
+    <span class="card__price">$79.20</span>
+    <a href="#" class="btn btn--small btn--ghost">Buy now</a>
+  </div>
+</section>
+
+<section class="card">
+  <img src="#" alt="Wireless Headphones" class="card__image">
+  <h2 class="card__title">Wireless Headphones with Dolby Surround Sound</h2>
+  <ul class="card__features">
+    <li class="card__feature">Truely Wireless</li>
+    <li class="card__feature">Dolby Surround Sound</li>
+    <li class="card__feature">13hrs of playback time</li>
+    <li class="card__feature">Made in Germany</li>
+  </ul>
+  <div class="card__footer">
+    <span class="card__price">$79.20</span>
+    <a href="#" class="btn btn--small btn--ghost">Buy now</a>
+  </div>
+</section>
+
+<section class="card">
+  <img src="#" alt="Wireless Headphones" class="card__image">
+  <h2 class="card__title">Wireless Headphones with Dolby Surround Sound</h2>
+  <ul class="card__features">
+    <li class="card__feature">Truely Wireless</li>
+    <li class="card__feature">Dolby Surround Sound</li>
+    <li class="card__feature">13hrs of playback time</li>
+    <li class="card__feature">Made in Germany</li>
+  </ul>
+  <div class="card__footer">
+    <span class="card__price">$79.20</span>
+    <a href="#" class="btn btn--small btn--ghost">Buy now</a>
+  </div>
+</section>
+
+<section class="app">
+  <div class="app__qr">
+    <img src="#" alt="QR code" class="app__qr-image">
+  </div>
+  <div class="app__content">
+    <h2 class="app__title">Scan QR code for more</h2>
+    <p class="app__text">Now you can download the official musify app.</p>
+    <a href="#" class="app__store-btn app__store-btn--google" aria-label="Get it on Google Play"></a>
+    <a href="#" class="app__store-btn app__store-btn--apple" aria-label="Download on the App Store"></a>
+  </div>
+</section>
+{% endblock content %}
+
+{% block js %}
+<script>
+  console.log('Инлайн-скрипт только для главной страницы.');
+</script>
+{% endblock js %}

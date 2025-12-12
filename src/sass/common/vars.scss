@@ -1,2 +1,15 @@
 @use "sass:color";
 
+$widths: (
+  xs: 320px,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1440px,
+);
+
+// Отступы
+$gap: 140px;
+$gap-sm: 20px;
+$gap-md: 32px;
+$gap-lg: 40px;

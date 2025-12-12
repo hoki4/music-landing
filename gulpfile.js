@@ -16,7 +16,9 @@ import sass from 'gulp-dart-sass';
 import sharpOptimizeImages from 'gulp-sharp-optimize-images';
 import svgmin from 'gulp-svgmin';
 import svgstore from 'gulp-svgstore';
+
 const { src, dest, watch, parallel, series } = gulp;
+const bs = browser.create();
 
 /**
  *  Основные директории
@@ -78,7 +80,7 @@ const imageOptimizeConfigs = {
     quality: 80,
     mozjpeg: true,
   }
-}
+};
 
 /**
  * Основные задачи
@@ -129,7 +131,7 @@ export const scripts = () => src(path.scripts.compile)
 export const clean = (done) => {
   deleteSync([dirs.dest]);
   done();
-}
+};
 
 export const sprite = () => src(`${path.img.icons}**/*.svg`)
   .pipe(plumber(notify.onError({
@@ -153,15 +155,15 @@ export const sprite = () => src(`${path.img.icons}**/*.svg`)
       // $('[stroke]').removeAttr('stroke');
       $('[style]').removeAttr('style');
     },
-    parserOptions: {xmlMode: true}
+    parserOptions: { xmlMode: true }
   }))
   .pipe(svgstore({
     inlineSvg: true
   }))
   .pipe(rename('sprite.svg'))
-  .pipe(dest(path.img.save))
+  .pipe(dest(path.img.save));
 
-export const img = ()  => src(`${path.img.root}**/*.{png,jpg,jpeg}`)
+export const img = () => src(`${path.img.root}**/*.{png,jpg,jpeg}`)
   .pipe(plumber(notify.onError({
     title: 'IMG',
     message: 'Error: <%= error.message %>'
@@ -169,7 +171,7 @@ export const img = ()  => src(`${path.img.root}**/*.{png,jpg,jpeg}`)
   .pipe(sharpOptimizeImages(imageOptimizeConfigs))
   .pipe(dest(path.img.save));
 
-export const images = ()  => src(`${path.images.root}**/*.{png,jpg,jpeg}`)
+export const images = () => src(`${path.images.root}**/*.{png,jpg,jpeg}`)
   .pipe(plumber(notify.onError({
     title: 'IMAGES',
     message: 'Error: <%= error.message %>'
@@ -178,41 +180,69 @@ export const images = ()  => src(`${path.images.root}**/*.{png,jpg,jpeg}`)
   .pipe(dest(path.images.save));
 
 const fonts = () => src(`${path.fonts.root}*.{woff,woff2}`)
-  .pipe(dest(`${path.fonts.save}`))
+  .pipe(dest(`${path.fonts.save}`));
 
 const vendorStyles = () => src(`${path.vendor.styles}*.min.css`)
-  .pipe(dest(`${path.styles.save}`))
+  .pipe(dest(`${path.styles.save}`));
 
 const vendorScripts = () => src(`${path.vendor.scripts}*.min.js`)
-  .pipe(dest(`${path.scripts.save}`))
+  .pipe(dest(`${path.scripts.save}`));
 
 export const vendor = parallel(vendorStyles, vendorScripts);
 
 const pixelGlass = () => src(`node_modules/pixel-glass/{styles.css,script.js}`)
-  .pipe(dest(`${dirs.dest}/static/pp/`))
+  .pipe(dest(`${dirs.dest}/static/pp/`));
 
-export const server = () => {
-  const bs = browser.init({
+export const pp = () => src(`${dirs.src}/static/pp/*`)
+  .pipe(dest(`${dirs.dest}/static/pp/`));
+
+/**
+ * Вспомогательная задача для перезагрузки
+ */
+const reload = (done) => {
+  bs.reload();
+  done();
+};
+
+/**
+ * Сервер и вотчеры
+ */
+export const server = (done) => {
+  bs.init({
     server: dirs.dest,
     cors: true,
     notify: false,
     ui: false,
     open: false
   });
-  watch(`${path.styles.root}**/*.scss`, styles).on('change', bs.reload);
-  watch(`${path.templates.root}**/*.j2`, templates).on('change', bs.reload);
-  watch(`${path.json}`, templates).on('change', bs.reload);
-  watch(`${path.scripts.root}**/*.js`, scripts).on('change', bs.reload);
+
+  // сначала пересобираем, потом перезагружаем браузер
+  watch(`${path.styles.root}**/*.scss`, series(styles, reload));
+  watch(`${path.templates.root}**/*.j2`, series(templates, reload));
+  watch(`${path.json}`, series(templates, reload));
+  watch(`${path.scripts.root}**/*.js`, series(scripts, reload));
+
+  // сигнализируем gulp, что задача server инициализировалась
+  done();
 };
 
 /**
  * Задачи для разработки
  */
-export const start = series(clean, parallel(fonts, pixelGlass), parallel(img, images, styles, templates, scripts, sprite), server);
+export const start = series(
+  clean,
+  parallel(fonts, pixelGlass),
+  parallel(img, styles, templates, scripts, sprite),
+  server
+);
 
 /**
  * Для билда
  */
-export const build = series(clean, fonts, parallel(img, images, styles, templates, scripts, sprite));
+export const build = series(
+  clean,
+  fonts,
+  parallel(img, images, styles, templates, scripts, sprite)
+);
 
 export default start;

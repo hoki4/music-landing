@@ -179,6 +179,13 @@ export const images = () => src(`${path.images.root}**/*.{png,jpg,jpeg}`)
   .pipe(sharpOptimizeImages(imageOptimizeConfigs))
   .pipe(dest(path.images.save));
 
+  export const svgImages = () => src(`${path.images.root}**/*.svg`)
+  .pipe(plumber(notify.onError({
+    title: 'SVG IMAGES',
+    message: 'Error: <%= error.message %>'
+  })))
+  .pipe(dest(path.images.save));
+
 const fonts = () => src(`${path.fonts.root}*.{woff,woff2}`)
   .pipe(dest(`${path.fonts.save}`));
 
@@ -232,7 +239,7 @@ export const server = (done) => {
 export const start = series(
   clean,
   parallel(fonts, pixelGlass),
-  parallel(img, styles, templates, scripts, sprite),
+  parallel(img, images, svgImages, styles, templates, scripts, sprite),
   server
 );
 
@@ -242,7 +249,8 @@ export const start = series(
 export const build = series(
   clean,
   fonts,
-  parallel(img, images, styles, templates, scripts, sprite)
+  parallel(img, images, svgImages, styles, templates, scripts, sprite)
+
 );
 
 export default start;

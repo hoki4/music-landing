@@ -18,138 +18,222 @@
 'title': 'Wireless Headphones with Dolby Surround Sound',
 'features': ['Truely Wireless', 'Dolby Surround Sound', '13hrs of playback time', 'Made in Germany'],
 'price': '$345'
+}, {
+'title': 'Wireless Headphones with Dolby Surround Sound',
+'features': ['Truely Wireless', 'Dolby Surround Sound', '13hrs of playback time', 'Made in Germany'],
+'price': '$345'
+}, {
+  'title': 'Wireless Headphones with Dolby Surround Sound',
+'features': ['Truely Wireless', 'Dolby Surround Sound', '13hrs of playback time', 'Made in Germany'],
+'price': '$345'
 }] %}
-{% for card in cards %}
-<section class="card">
-  <img src="#" alt="Wireless Headphones" class="card__image">
-  <h2 class="card__title">{{ card.title }}</h2>
-  <ul class="card__features">
-    {% for feature in card.features %}
-    <li class="card__feature">{{ feature }}</li>
-    {% endfor %}
-  </ul>
-  <div class="card__footer">
-    <span class="card__price">{{ card.price }}</span>
-    <a href="#" class="btn btn--small btn--ghost">Buy now</a>
+<div class="cards">
+  {% for card in cards %}
+  <section class="card">
+    <img class="card__image" src="{{ url_for('static', filename='images/card-black-headphones.jpg') }}"
+      alt="Wireless Headphones">
+    <h2 class="card__title">{{ card.title }}</h2>
+    <ul class="card__features">
+      {% for feature in card.features %}
+      <li class="card__feature">{{ feature }}</li>
+      {% endfor %}
+    </ul>
+    <div class="card__footer">
+      <span class="card__price">{{ card.price }}</span>
+      <div class="card__actions">
+        <a class="card__btn card__btn--ghost" href="#">
+          <img class="card__btn-icon" src="{{ url_for('static', filename='images/orange-cart.png') }}" alt=""
+            aria-hidden="true">
+          <span>Add to cart</span>
+        </a>
+        <a class="card__btn card__btn--primary" href="#">Buy now</a>
+      </div>
+    </div>
+  </section>
+  {% endfor %}
+</div>
+<section class="benefits">
+  <h2 class="benefits__title">Why buy directly from Musify?</h2>
+
+  <div class="benefits__list">
+    <p class="benefit benefit--delivery">Free<br> delivery</p>
+    <p class="benefit benefit--verified">Verified<br> Products</p>
+    <p class="benefit benefit--support">24/7<br> Customer<br> support</p>
   </div>
 </section>
-{% endfor %}
 
-<section class="benefits">
-  <span class="benefit__icon"></span>
-  <h2 class="benefit__title">Free delivery</h2>
-  <span class="benefit__icon "></span>
-  <h2 class="benefit__title">Verified Products</h2>
-  <span class="benefit__icon"></span>
-  <h2 class="benefit__title">24/7 Customer support</h2>
-</section>
 
 <section class="offer">
+  <h2 class="section__title offer__title">Exclusive Offer</h2>
+
   <div class="offer__visual">
-    <span class="offer__badge-text">20% off</span>
-    <img src="#" alt="Offer headphones" class="offer__image">
+    <span class="offer__badge">20%<br>off</span>
+
+    <img class="offer__image" src="{{ url_for('static', filename='images/exclusive-offer-headphones.png') }}"
+      alt="Sony headphones">
   </div>
 
   <div class="offer__content">
-    <h2 class="section__title">Exclusive Offer</h2>
     <p class="offer__subtitle">Offer ends in</p>
 
     <div class="offer__timer">
-      <span class="offer__timer-value">02</span>
-      <span class="offer__timer-label">Hour</span>
-      <span class="offer__timer-value">38</span>
-      <span class="offer__timer-label">Mins</span>
-      <span class="offer__timer-value">49</span>
-      <span class="offer__timer-label">Secs</span>
+      <div class="offer__time">
+        <span class="offer__timer-value">02</span>
+        <span class="offer__timer-label">Hour</span>
+      </div>
+
+      <div class="offer__time">
+        <span class="offer__timer-value">38</span>
+        <span class="offer__timer-label">Mins</span>
+      </div>
+
+      <div class="offer__time">
+        <span class="offer__timer-value">49</span>
+        <span class="offer__timer-label">Secs</span>
+      </div>
     </div>
 
+
     <div class="offer__buttons">
-      <a href="#" class="offer__button--ghost">View details</a>
-      <a href="#" class="offer__button--primary">Shop now</a>
+      <a href="#" class="offer__button offer__button--ghost">View details</a>
+      <a href="#" class="offer__button offer__button--primary">Shop now</a>
     </div>
   </div>
 </section>
 
 <section class="accessories">
-  <header class="section__header">
-    <h2 class="section__title">Try our other Accessories</h2>
-  </header>
+  <h2 class="section__title">Try our other Accessories</h2>
 
   <div class="accessories__grid">
     <article class="accessories__item">
-      <img src="#" alt="Watch" class="accessories__image">
+      <img class="accessories__image" src="{{ url_for('static', filename='images/accessories-watch.webp') }}"
+        alt="Watch">
     </article>
+
     <article class="accessories__item">
-      <img src="#" alt="Speakers" class="accessories__image">
+      <img class="accessories__image"
+        src="{{ url_for('static', filename='images/accessories-smart-speaker-set.webp') }}" alt="Smart speaker set">
     </article>
+
     <article class="accessories__item">
-      <img src="#" alt="Smart speaker" class="accessories__image">
+      <img class="accessories__image" src="{{ url_for('static', filename='images/accessories-soundbar.webp') }}"
+        alt="Soundbar">
     </article>
+
     <article class="accessories__item">
-      <img src="#" alt="Portable speaker" class="accessories__image">
+      <img class="accessories__image" src="{{ url_for('static', filename='images/accessories-mini-speaker.webp') }}"
+        alt="Mini speaker">
     </article>
   </div>
-
 </section>
 
-<header class="section__header">
-  <h2 class="section__title">New Arrivals</h2>
-</header>
+<h2 class="section__title">New Arrivals</h2>
 
-<section class="card">
-  <img src="#" alt="Wireless Headphones" class="card__image">
-  <h2 class="card__title">Wireless Headphones with Dolby Surround Sound</h2>
-  <ul class="card__features">
-    <li class="card__feature">Truely Wireless</li>
-    <li class="card__feature">Dolby Surround Sound</li>
-    <li class="card__feature">13hrs of playback time</li>
-    <li class="card__feature">Made in Germany</li>
-  </ul>
-  <div class="card__footer">
-    <span class="card__price">$79.20</span>
-    <a href="#" class="btn btn--small btn--ghost">Buy now</a>
-  </div>
+<section class="promo-cards">
+  <article class="promo-card">
+    <img src="{{ url_for('static', filename='images/arrivals-headphones-item-1.png') }}" alt="Wireless Headphones"
+      class="promo-card__image">
+
+    <div class="promo-card__content">
+      <h3 class="promo-card__title">
+        Wireless Headphones with Dolby Surround Sound
+      </h3>
+
+      <ul class="promo-card__features">
+        <li>Truely Wireless</li>
+        <li>Dolby Surround Sound</li>
+        <li>13hrs of playback time</li>
+        <li>Made in Germany</li>
+      </ul>
+
+      <span class="promo-card__price">$79.20</span>
+
+      <div class="promo-card__actions">
+        <a href="#" class="promo-card__btn promo-card__btn--ghost">
+          <img src="{{ url_for('static', filename='images/orange-cart.png') }}" alt="" aria-hidden="true">
+          Add to cart
+        </a>
+
+        <a href="#" class="promo-card__btn promo-card__btn--primary">
+          Buy now
+        </a>
+      </div>
+    </div>
+  </article>
+  <article class="promo-card">
+    <img src="{{ url_for('static', filename='images/arrivals-headphones-item-1.png') }}" alt="Wireless Headphones"
+      class="promo-card__image">
+
+    <div class="promo-card__content">
+      <h3 class="promo-card__title">
+        Wireless Headphones with Dolby Surround Sound
+      </h3>
+
+      <ul class="promo-card__features">
+        <li>Truely Wireless</li>
+        <li>Dolby Surround Sound</li>
+        <li>13hrs of playback time</li>
+        <li>Made in Germany</li>
+      </ul>
+
+      <span class="promo-card__price">$79.20</span>
+
+      <div class="promo-card__actions">
+        <a href="#" class="promo-card__btn promo-card__btn--ghost">
+          <img src="{{ url_for('static', filename='images/orange-cart.png') }}" alt="" aria-hidden="true">
+          Add to cart
+        </a>
+
+        <a href="#" class="promo-card__btn promo-card__btn--primary">
+          Buy now
+        </a>
+      </div>
+    </div>
+  </article>
+  <article class="promo-card">
+    <img src="{{ url_for('static', filename='images/arrivals-headphones-item-1.png') }}" alt="Wireless Headphones"
+      class="promo-card__image">
+
+    <div class="promo-card__content">
+      <h3 class="promo-card__title">
+        Wireless Headphones with Dolby Surround Sound
+      </h3>
+
+      <ul class="promo-card__features">
+        <li>Truely Wireless</li>
+        <li>Dolby Surround Sound</li>
+        <li>13hrs of playback time</li>
+        <li>Made in Germany</li>
+      </ul>
+
+      <span class="promo-card__price">$79.20</span>
+
+      <div class="promo-card__actions">
+        <a href="#" class="promo-card__btn promo-card__btn--ghost">
+          <img src="{{ url_for('static', filename='images/orange-cart.png') }}" alt="" aria-hidden="true">
+          Add to cart
+        </a>
+
+        <a href="#" class="promo-card__btn promo-card__btn--primary">
+          Buy now
+        </a>
+      </div>
+    </div>
+  </article>
 </section>
 
-<section class="card">
-  <img src="#" alt="Wireless Headphones" class="card__image">
-  <h2 class="card__title">Wireless Headphones with Dolby Surround Sound</h2>
-  <ul class="card__features">
-    <li class="card__feature">Truely Wireless</li>
-    <li class="card__feature">Dolby Surround Sound</li>
-    <li class="card__feature">13hrs of playback time</li>
-    <li class="card__feature">Made in Germany</li>
-  </ul>
-  <div class="card__footer">
-    <span class="card__price">$79.20</span>
-    <a href="#" class="btn btn--small btn--ghost">Buy now</a>
-  </div>
-</section>
-
-<section class="card">
-  <img src="#" alt="Wireless Headphones" class="card__image">
-  <h2 class="card__title">Wireless Headphones with Dolby Surround Sound</h2>
-  <ul class="card__features">
-    <li class="card__feature">Truely Wireless</li>
-    <li class="card__feature">Dolby Surround Sound</li>
-    <li class="card__feature">13hrs of playback time</li>
-    <li class="card__feature">Made in Germany</li>
-  </ul>
-  <div class="card__footer">
-    <span class="card__price">$79.20</span>
-    <a href="#" class="btn btn--small btn--ghost">Buy now</a>
-  </div>
-</section>
 
 <section class="app">
-  <div class="app__qr">
-    <img src="#" alt="QR code" class="app__qr-image">
-  </div>
+  <img class="app__qr-image" src="{{ url_for('static', filename='images/qr-code.png') }}" alt="QR code">
   <div class="app__content">
     <h2 class="app__title">Scan QR code for more</h2>
     <p class="app__text">Now you can download the official musify app.</p>
-    <a href="#" class="app__store-btn app__store-btn--google" aria-label="Get it on Google Play"></a>
-    <a href="#" class="app__store-btn app__store-btn--apple" aria-label="Download on the App Store"></a>
+    <a href="#" class="app__store-btn app__store-btn--google" aria-label="Get it on Google Play">
+      <img class="app__google-image" src="{{ url_for('static', filename='images/google-play.png') }}" alt="google play">
+    </a>
+    <a href="#" class="app__store-btn app__store-btn--apple" aria-label="Download on the App Store">
+      <img class="app__apple-image" src="{{ url_for('static', filename='images/app-store.png') }}" alt="apple store">
+    </a>
   </div>
 </section>
 {% endblock content %}

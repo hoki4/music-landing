@@ -4,7 +4,7 @@
 
 @mixin container {
   box-sizing: border-box;
-  width: map.get($widths, sm);
+  width: map.get($widths, xs);
   padding-right: $gap-sm;
   padding-left: $gap-sm;
   margin-right: auto;

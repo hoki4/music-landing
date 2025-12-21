@@ -1,4 +1,525 @@
 @use "../mixins/layout.scss" as *;
+@use "../mixins/media.scss" as *;
+
+.main__wrap {
+  @include container;
+}
+
+.card__image {
+  width: 250px;
+  height: 220px;
+}
+
+.card {
+  margin-right: 30px;
+  border: 1px solid #ffffff;
+  border-radius: 50px;
+  width: 250px;
+  background: #282828;
+  margin-bottom: 50px;
+}
+
+.cards {
+  display: flex;
+}
+
+.card__title {
+  font-weight: 400;
+  font-size: 18px;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+  padding-left: 16px;
+}
+
+.card__feature {
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+  margin-top: 10px;
+}
+
+.card__footer {
+  padding: 0 8px 18px;
+  margin-top: 12px;
+}
+
+.card__price {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 22px;
+  letter-spacing: 0.02em;
+  color: #FC9918;
+  /* как в палитре */
+}
+
+/* ряд кнопок */
+.card__actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+/* общие стили кнопок */
+.card__btn {
+  height: 42px;
+  border-radius: 999px;
+  padding: 0 16px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* Add to cart (outline) */
+.card__btn--ghost {
+  background: transparent;
+  border: 2px solid #F14A16;
+  color: #F14A16;
+}
+
+/* Buy now (filled) */
+.card__btn--primary {
+  background: #F14A16;
+  border: 2px solid #F14A16;
+  color: #fff;
+
+  box-shadow: 0 8px 18px rgba(241, 74, 22, 0.55);
+}
+
+/* иконка корзины */
+.card__btn-icon {
+  width: 16px;
+  height: 16px;
+  display: block;
+}
+
+@include media-min(lg) {
+  .cards {
+    gap: 28px;
+    overflow: visible;
+    flex-wrap: nowrap;
+  }
+
+  .card {
+    margin-right: 0; // ты сейчас margin-right используешь
+  }
+}
 
 
-.main__wrap { @include container; }
+.benefits {
+  border-radius: 25px;
+  padding: 32px 24px;
+
+  background: linear-gradient(135deg, #370665 0%, #35589a 100%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  color: #ffffff;
+  margin-bottom: 60px;
+}
+
+/* Заголовок */
+.benefits__title {
+  text-align: center;
+}
+
+/* Пункт */
+.benefit {
+  width: 100%;
+  max-width: 260px;
+
+  padding-left: 46px;
+  margin-bottom: 32px;
+
+  font-size: 18px;
+  line-height: 1.3;
+  text-align: left;
+
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 28px 28px;
+}
+
+/* Иконки */
+.benefit--delivery {
+  background-image: url("../images/delivert.png");
+  background-repeat: no-repeat;
+}
+
+.benefit--verified {
+  background-image: url("../images/verified.png");
+  background-repeat: no-repeat;
+}
+
+.benefit--support {
+  background-image: url("../images/support.png");
+  background-repeat: no-repeat;
+}
+
+/* убираем лишний отступ снизу */
+.benefit__text:last-child {
+  margin-bottom: 0;
+}
+
+
+
+/* =========================
+   OFFER (Exclusive Offer)
+   ========================= */
+
+.offer {
+  padding-top: 40px;
+}
+
+.offer__title {
+  margin: 0 0 22px;
+}
+
+/* верхний визуал: картинка с фоном + бейдж */
+.offer__visual {
+  position: relative;
+  display: grid;
+  place-items: center;
+  margin-bottom: 22px;
+}
+
+/* картинка уже С фоном (круг + наушники) */
+.offer__image {
+  width: 260px;
+  /* под мобилку как на макете */
+  height: auto;
+  display: block;
+}
+
+/* бейдж 20% off */
+.offer__badge {
+  position: absolute;
+  top: 12px;
+  left: 6px;
+
+  width: 86px;
+  height: 86px;
+  border-radius: 50%;
+
+  background: #370665;
+  color: #fff;
+
+  display: grid;
+  place-items: center;
+  text-align: center;
+
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1.05;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+}
+
+/* нижняя часть */
+.offer__content {
+  text-align: center;
+}
+
+.offer__subtitle {
+  margin: 0 0 16px;
+  font-size: 18px;
+  color: #000;
+}
+
+/* таймер: 3 фиолетовые капсулы */
+.offer__timer {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.offer__time {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.offer__timer-value {
+  width: 74px;
+  height: 58px;
+  border-radius: 18px;
+
+  background: #370665;
+  /* фиолетовый как в макете */
+  color: #fff;
+
+  display: grid;
+  place-items: center;
+
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .18);
+}
+
+.offer__timer-label {
+  margin-top: 8px;
+  font-size: 12px;
+  color: #000;
+  /* подпись на белом */
+  opacity: .7;
+}
+
+/* кнопки */
+.offer__buttons {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 26px;
+}
+
+.offer__button {
+  height: 46px;
+  padding: 0 18px;
+  border-radius: 20px;
+
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.offer__button--ghost {
+  background: #fff;
+  border: 2px solid #F14A16;
+  color: #F14A16;
+}
+
+.offer__button--primary {
+  background: #F14A16;
+  border: 2px solid #F14A16;
+  color: #fff;
+  box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.25);
+}
+
+@include media-min(lg) {
+  .offer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    column-gap: 40px;
+  }
+}
+
+
+.accessories {
+  padding-top: 28px;
+}
+
+.accessories .section__title {
+  margin: 0 0 22px;
+}
+
+/* 4 блока сверху вниз */
+.accessories__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  margin-bottom: 80px;
+}
+
+.accessories__item {
+  border-radius: 22px;
+  overflow: hidden;
+  /* важно, чтобы картинка обрезалась */
+  border: 2px solid #ffffff;
+  /* белая обводка как в макете */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .18);
+  background: #000;
+  /* на случай пока картинка грузится */
+}
+
+.accessories__image {
+  width: 100%;
+  height: 150px;
+  /* под мобильный макет */
+  display: block;
+  object-fit: cover;
+  /* чтобы красиво заполняло */
+  object-position: center;
+}
+
+@include media-min(lg) {
+  .accessories__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+  }
+
+  .accessories__image {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 18px;
+  }
+}
+
+
+/* контейнер */
+.promo-cards {
+  display: flex;
+  gap: 18px;
+  margin-bottom: 150px;
+}
+
+.promo-cards::-webkit-scrollbar {
+  display: none;
+}
+
+/* карточка */
+.promo-card {
+  flex: 0 0 250px;
+  border-radius: 50px;
+  overflow: hidden;
+  background: #370665; // фиолетовый
+  border: 2px solid #35589A; // синяя рамка
+  scroll-snap-align: start;
+
+  box-shadow: 0 12px 30px rgba(0, 0, 0, .35);
+}
+
+/* картинка */
+.promo-card__image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+/* контент */
+.promo-card__content {
+  padding: 18px;
+}
+
+.promo-card__title {
+  margin: 0;
+  font-weight: 400;
+  font-size: 18px;
+  letter-spacing: .02em;
+  color: #fff;
+}
+
+/* список */
+.promo-card__features {
+  margin: 12px 0 0;
+  padding-left: 18px;
+}
+
+.promo-card__features li {
+  margin-top: 8px;
+  font-size: 12px;
+  color: #fff;
+}
+
+/* цена */
+.promo-card__price {
+  display: block;
+  margin-top: 14px;
+  font-weight: 700;
+  font-size: 20px;
+  color: #FC9918;
+}
+
+/* кнопки */
+.promo-card__actions {
+  margin-top: 14px;
+  display: flex;
+  gap: 12px;
+}
+
+.promo-card__btn {
+  height: 42px;
+  padding: 0 16px;
+  border-radius: 999px;
+
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.promo-card__btn img {
+  width: 16px;
+  height: 16px;
+}
+
+/* ghost */
+.promo-card__btn--ghost {
+  color: #F14A16;
+  border: 2px solid #F14A16;
+  background: transparent;
+}
+
+/* primary */
+.promo-card__btn--primary {
+  background: #F14A16;
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(241, 74, 22, .6);
+}
+
+@include media-min(lg) {
+  /* возвращаем блоку нормальную “колонку” */
+  .benefits {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .benefits__title {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  /* делаем пункты в ряд */
+  .benefits__list {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 90px; /* подгони под макет */
+  }
+
+  /* пункты: убираем mobile-ширины и отступы снизу */
+  .benefit {
+    width: auto;
+    max-width: none;
+    margin-bottom: 0;
+
+    font-size: 26px;   /* как на макете */
+    line-height: 1.2;
+
+    padding-left: 56px; /* место под иконку */
+    background-size: 34px 34px;
+    background-position: left center;
+  }
+
+  /* чтобы текст был в одну строку как на макете */
+  .benefit br {
+    display: none;
+  }
+}

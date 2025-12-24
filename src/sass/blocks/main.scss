@@ -50,17 +50,14 @@
   font-size: 22px;
   letter-spacing: 0.02em;
   color: #FC9918;
-  /* как в палитре */
 }
 
-/* ряд кнопок */
 .card__actions {
   display: flex;
   gap: 12px;
   align-items: center;
 }
 
-/* общие стили кнопок */
 .card__btn {
   height: 42px;
   border-radius: 999px;
@@ -78,14 +75,12 @@
   white-space: nowrap;
 }
 
-/* Add to cart (outline) */
 .card__btn--ghost {
   background: transparent;
   border: 2px solid #F14A16;
   color: #F14A16;
 }
 
-/* Buy now (filled) */
 .card__btn--primary {
   background: #F14A16;
   border: 2px solid #F14A16;
@@ -94,7 +89,6 @@
   box-shadow: 0 8px 18px rgba(241, 74, 22, 0.55);
 }
 
-/* иконка корзины */
 .card__btn-icon {
   width: 16px;
   height: 16px;
@@ -109,7 +103,7 @@
   }
 
   .card {
-    margin-right: 0; // ты сейчас margin-right используешь
+    margin-right: 0;
   }
 }
 
@@ -128,12 +122,10 @@
   margin-bottom: 60px;
 }
 
-/* Заголовок */
 .benefits__title {
   text-align: center;
 }
 
-/* Пункт */
 .benefit {
   width: 100%;
   max-width: 260px;
@@ -150,7 +142,6 @@
   background-size: 28px 28px;
 }
 
-/* Иконки */
 .benefit--delivery {
   background-image: url("../images/delivert.png");
   background-repeat: no-repeat;
@@ -166,16 +157,9 @@
   background-repeat: no-repeat;
 }
 
-/* убираем лишний отступ снизу */
 .benefit__text:last-child {
   margin-bottom: 0;
 }
-
-
-
-/* =========================
-   OFFER (Exclusive Offer)
-   ========================= */
 
 .offer {
   padding-top: 40px;
@@ -185,7 +169,6 @@
   margin: 0 0 22px;
 }
 
-/* верхний визуал: картинка с фоном + бейдж */
 .offer__visual {
   position: relative;
   display: grid;
@@ -193,15 +176,12 @@
   margin-bottom: 22px;
 }
 
-/* картинка уже С фоном (круг + наушники) */
 .offer__image {
   width: 260px;
-  /* под мобилку как на макете */
   height: auto;
   display: block;
 }
 
-/* бейдж 20% off */
 .offer__badge {
   position: absolute;
   top: 12px;
@@ -225,7 +205,6 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
 }
 
-/* нижняя часть */
 .offer__content {
   text-align: center;
 }
@@ -236,7 +215,6 @@
   color: #000;
 }
 
-/* таймер: 3 фиолетовые капсулы */
 .offer__timer {
   display: flex;
   justify-content: center;
@@ -256,7 +234,6 @@
   border-radius: 18px;
 
   background: #370665;
-  /* фиолетовый как в макете */
   color: #fff;
 
   display: grid;
@@ -273,11 +250,9 @@
   margin-top: 8px;
   font-size: 12px;
   color: #000;
-  /* подпись на белом */
   opacity: .7;
 }
 
-/* кнопки */
 .offer__buttons {
   display: flex;
   justify-content: center;
@@ -331,7 +306,6 @@
   margin: 0 0 22px;
 }
 
-/* 4 блока сверху вниз */
 .accessories__grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -342,21 +316,16 @@
 .accessories__item {
   border-radius: 22px;
   overflow: hidden;
-  /* важно, чтобы картинка обрезалась */
   border: 2px solid #ffffff;
-  /* белая обводка как в макете */
   box-shadow: 0 10px 30px rgba(0, 0, 0, .18);
   background: #000;
-  /* на случай пока картинка грузится */
 }
 
 .accessories__image {
   width: 100%;
   height: 150px;
-  /* под мобильный макет */
   display: block;
   object-fit: cover;
-  /* чтобы красиво заполняло */
   object-position: center;
 }
 
@@ -375,8 +344,6 @@
   }
 }
 
-
-/* контейнер */
 .promo-cards {
   display: flex;
   gap: 18px;
@@ -387,19 +354,17 @@
   display: none;
 }
 
-/* карточка */
 .promo-card {
   flex: 0 0 250px;
   border-radius: 50px;
   overflow: hidden;
-  background: #370665; // фиолетовый
-  border: 2px solid #35589A; // синяя рамка
+  background: #370665;
+  border: 2px solid #35589A;
   scroll-snap-align: start;
 
   box-shadow: 0 12px 30px rgba(0, 0, 0, .35);
 }
 
-/* картинка */
 .promo-card__image {
   width: 100%;
   height: 220px;
@@ -407,7 +372,6 @@
   display: block;
 }
 
-/* контент */
 .promo-card__content {
   padding: 18px;
 }
@@ -420,7 +384,6 @@
   color: #fff;
 }
 
-/* список */
 .promo-card__features {
   margin: 12px 0 0;
   padding-left: 18px;
@@ -432,7 +395,6 @@
   color: #fff;
 }
 
-/* цена */
 .promo-card__price {
   display: block;
   margin-top: 14px;
@@ -441,7 +403,6 @@
   color: #FC9918;
 }
 
-/* кнопки */
 .promo-card__actions {
   margin-top: 14px;
   display: flex;
@@ -468,14 +429,12 @@
   height: 16px;
 }
 
-/* ghost */
 .promo-card__btn--ghost {
   color: #F14A16;
   border: 2px solid #F14A16;
   background: transparent;
 }
 
-/* primary */
 .promo-card__btn--primary {
   background: #F14A16;
   color: #fff;
@@ -483,7 +442,6 @@
 }
 
 @include media-min(lg) {
-  /* возвращаем блоку нормальную “колонку” */
   .benefits {
     display: flex;
     flex-direction: column;
@@ -495,30 +453,27 @@
     margin-bottom: 48px;
   }
 
-  /* делаем пункты в ряд */
   .benefits__list {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 90px; /* подгони под макет */
+    gap: 90px;
   }
 
-  /* пункты: убираем mobile-ширины и отступы снизу */
   .benefit {
     width: auto;
     max-width: none;
     margin-bottom: 0;
 
-    font-size: 26px;   /* как на макете */
+    font-size: 26px;
     line-height: 1.2;
 
-    padding-left: 56px; /* место под иконку */
+    padding-left: 56px;
     background-size: 34px 34px;
     background-position: left center;
   }
 
-  /* чтобы текст был в одну строку как на макете */
   .benefit br {
     display: none;
   }

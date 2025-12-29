@@ -13,3 +13,60 @@ $gap: 140px;
 $gap-sm: 20px;
 $gap-md: 32px;
 $gap-lg: 40px;
+
+:root {
+  --c-white: #FFFFFF;
+  --c-black: #000000;
+
+  --c-brand: #F14A16;
+  --c-accent: #FC9918;
+
+  --c-purple-1: #370665;
+  --c-purple-2: #35589A;
+
+  --c-gray-90: #E5E5E5;
+  --c-gray-70: #C4C4C4;
+  --c-gray-60: #A4A4A4;
+  --c-gray-50: #888888;
+
+  --c-dark-1: #070606;
+
+  --bg: var(--c-white);
+  --text: var(--c-black);
+  --muted: rgba(40, 40, 40, 0.56);
+
+  --surface: #FAFAFA;
+  --surface-2: #FFFFFF;
+
+  --border: rgba(0, 0, 0, 0.12);
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+
+  --g-brand: linear-gradient(135deg, var(--c-purple-1) 0%, var(--c-purple-2) 100%);
+
+  --btn-primary-bg: var(--c-brand);
+  --btn-primary-border: var(--c-brand);
+  --btn-primary-text: var(--c-white);
+
+  --btn-ghost-bg: transparent;
+  --btn-ghost-border: var(--c-brand);
+  --btn-ghost-text: var(--c-brand);
+}
+
+body.theme-dark {
+  --bg: var(--c-black);
+  --text: var(--c-white);
+  --muted: rgba(255, 255, 255, 0.70);
+
+  --surface: var(--c-dark-1);
+  --surface-2: var(--c-dark-1);
+
+  --border: rgba(255, 255, 255, 0.18);
+  --shadow: 0 14px 40px rgba(0, 0, 0, 0.55);
+
+  --g-brand: linear-gradient(135deg, #370665 0%, #35589A 100%);
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+}

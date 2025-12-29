@@ -12,11 +12,12 @@
 
 .card {
   margin-right: 30px;
-  border: 1px solid #ffffff;
+  border: 1px solid var(--border);
   border-radius: 50px;
   width: 250px;
-  background: #282828;
+  background: var(--surface);
   margin-bottom: 50px;
+  box-shadow: var(--shadow);
 }
 
 .cards {
@@ -27,7 +28,7 @@
   font-weight: 400;
   font-size: 18px;
   letter-spacing: 0.02em;
-  color: #ffffff;
+  color: var(--text);
   padding-left: 16px;
 }
 
@@ -35,7 +36,7 @@
   font-weight: 400;
   font-size: 12px;
   letter-spacing: 0.02em;
-  color: #ffffff;
+  color: var(--text);
   margin-top: 10px;
 }
 
@@ -49,7 +50,7 @@
   margin-bottom: 12px;
   font-size: 22px;
   letter-spacing: 0.02em;
-  color: #FC9918;
+  color: var(--c-accent);
 }
 
 .card__actions {
@@ -77,15 +78,14 @@
 
 .card__btn--ghost {
   background: transparent;
-  border: 2px solid #F14A16;
-  color: #F14A16;
+  border: 2px solid var(--c-brand);
+  color: var(--c-brand);
 }
 
 .card__btn--primary {
-  background: #F14A16;
-  border: 2px solid #F14A16;
+  background: var(--c-brand);
+  border: 2px solid var(--c-brand);
   color: #fff;
-
   box-shadow: 0 8px 18px rgba(241, 74, 22, 0.55);
 }
 
@@ -107,12 +107,11 @@
   }
 }
 
-
 .benefits {
   border-radius: 25px;
   padding: 32px 24px;
 
-  background: linear-gradient(135deg, #370665 0%, #35589a 100%);
+  background: var(--g-brand);
 
   display: flex;
   flex-direction: column;
@@ -167,6 +166,12 @@
 
 .offer__title {
   margin: 0 0 22px;
+  text-align: center;
+}
+
+.section__title {
+  text-align: center;
+  color: var(--text);
 }
 
 .offer__visual {
@@ -191,7 +196,7 @@
   height: 86px;
   border-radius: 50%;
 
-  background: #370665;
+  background: var(--c-purple-1);
   color: #fff;
 
   display: grid;
@@ -212,7 +217,8 @@
 .offer__subtitle {
   margin: 0 0 16px;
   font-size: 18px;
-  color: #000;
+  color: var(--text);
+  opacity: .85;
 }
 
 .offer__timer {
@@ -233,7 +239,7 @@
   height: 58px;
   border-radius: 18px;
 
-  background: #370665;
+  background: var(--c-purple-1);
   color: #fff;
 
   display: grid;
@@ -249,7 +255,7 @@
 .offer__timer-label {
   margin-top: 8px;
   font-size: 12px;
-  color: #000;
+  color: var(--text);
   opacity: .7;
 }
 
@@ -276,14 +282,14 @@
 }
 
 .offer__button--ghost {
-  background: #fff;
-  border: 2px solid #F14A16;
-  color: #F14A16;
+  background: var(--surface-2);
+  border: 2px solid var(--c-brand);
+  color: var(--c-brand);
 }
 
 .offer__button--primary {
-  background: #F14A16;
-  border: 2px solid #F14A16;
+  background: var(--c-brand);
+  border: 2px solid var(--c-brand);
   color: #fff;
   box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.25);
 }
@@ -295,8 +301,12 @@
     align-items: center;
     column-gap: 40px;
   }
-}
 
+  .offer__visual {
+    grid-column: 2;
+    margin-bottom: 0;
+  }
+}
 
 .accessories {
   padding-top: 28px;
@@ -316,9 +326,9 @@
 .accessories__item {
   border-radius: 22px;
   overflow: hidden;
-  border: 2px solid #ffffff;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, .18);
-  background: #000;
+  border: 2px solid var(--border);
+  box-shadow: var(--shadow);
+  background: var(--surface);
 }
 
 .accessories__image {
@@ -358,8 +368,9 @@
   flex: 0 0 250px;
   border-radius: 50px;
   overflow: hidden;
-  background: #370665;
-  border: 2px solid #35589A;
+
+  background: var(--c-purple-1);
+  border: 2px solid var(--c-purple-2);
   scroll-snap-align: start;
 
   box-shadow: 0 12px 30px rgba(0, 0, 0, .35);
@@ -400,7 +411,7 @@
   margin-top: 14px;
   font-weight: 700;
   font-size: 20px;
-  color: #FC9918;
+  color: var(--c-accent);
 }
 
 .promo-card__actions {
@@ -430,13 +441,13 @@
 }
 
 .promo-card__btn--ghost {
-  color: #F14A16;
-  border: 2px solid #F14A16;
+  color: var(--c-brand);
+  border: 2px solid var(--c-brand);
   background: transparent;
 }
 
 .promo-card__btn--primary {
-  background: #F14A16;
+  background: var(--c-brand);
   color: #fff;
   box-shadow: 0 6px 18px rgba(241, 74, 22, .6);
 }

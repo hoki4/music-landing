@@ -7,7 +7,7 @@
 
 .app {
   border-radius: 25px;
-  background: linear-gradient(135deg, #370665 0%, #35589a 100%);
+  background: var(--g-brand);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -54,7 +54,11 @@
 }
 
 .footer {
-  background: #370665;
+  background: var(--c-purple-1);
+}
+
+body.theme-dark .footer {
+  background: #1a0630;
 }
 
 .footer__wrap {
@@ -117,27 +121,31 @@
 }
 
 .footer__input {
-  border: 2px solid #f14a16;
+  border: 2px solid var(--c-brand);
   border-radius: 20px;
   height: 54px;
-  background: #370665;
+  background: transparent;
   font-weight: 400;
   font-size: 20px;
   letter-spacing: 0.03em;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.85);
   padding-left: 25px;
+}
+
+.footer__input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .footer__button {
   border-radius: 20px;
   width: 200px;
   height: 51px;
-  background: #f14a16;
+  background: var(--c-brand);
   font-weight: 700;
   font-size: 26px;
   letter-spacing: 0.05em;
   color: #ffffff;
-  border: 2px solid #f14a16;
+  border: 2px solid var(--c-brand);
 }
 
 .footer__copy {
@@ -194,6 +202,7 @@
     column-gap: 60px;
     row-gap: 30px;
     align-items: end;
+    margin-right: 7px;
   }
 
   .footer__column:nth-of-type(4) > .footer__social {
@@ -245,5 +254,3 @@
     margin: 0;
   }
 }
-
-

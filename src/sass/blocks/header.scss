@@ -310,6 +310,29 @@ body.theme-dark .search__input {
     background: none;
   }
 
+  .hero__glow {
+    position: absolute;
+    display: block;
+  }
+
+  .hero__glow--left {
+    width: 1000px;
+    height: 1000px;
+    background: radial-gradient(#5359a7 0%, #00000d00 71%);
+    left: -12%;
+    top: -107px;
+    opacity: .5;
+  }
+
+  .hero__glow--right {
+    width: 900px;
+    height: 900px;
+    background: radial-gradient(#370665 0%, #ffffff00 65%);
+    left: 46%;
+    top: -179px;
+    opacity: .6;
+  }
+
   .hero::before {
     content: "";
     position: absolute;

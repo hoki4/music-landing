@@ -73,10 +73,14 @@ body.theme-dark .search__input {
 
 .theme-toggle {
   position: relative;
+  width: 56px;
+  height: 28px;
+  padding: 2px;
   border: 0;
   border-radius: 999px;
   background: var(--surface-2);
   box-shadow: var(--shadow);
+
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
@@ -86,21 +90,22 @@ body.theme-dark .search__input {
 .theme-toggle::before {
   content: "";
   position: absolute;
-  left: -16px;
-  z-index: 2;
-  width: 23px;
-  height: 23px;
+  top: 2px;
+  left: 1px;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
   background: var(--c-gray-50);
   transition: transform .25s ease;
+  z-index: 2;
 }
 
 .theme-toggle.is-light::before {
-  transform: translateX(100%);
+  transform: translateX(0);
 }
 
 .theme-toggle.is-dark::before {
-  transform: translateX(0);
+  transform: translateX(28px);
 }
 
 .theme-toggle__icon {

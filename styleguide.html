@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Musify</title>
+  <link rel="stylesheet" href="/static/css/style.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+  <meta name="description" content="">
+</head>
+
+<body>
+  <header class="header">
+    <div class="header__wrap">
+      <div class="header__top">
+        <button class="header__burger" type="button" aria-label="Открыть меню">
+          
+  
+  <svg class="header__burger-icon" aria-label="Открыть меню" width="24" height="24">
+    <use xlink:href="/static/img/sprite.svg#burger"></use>
+  </svg>
+        </button>
+
+        <a class="logo" href="#">
+          <img src="static/images/logo.png" width="70" height="70" alt="Musify logo">
+        </a>
+
+        <nav class="navigation">
+          <a class="navigation__link navigation__link--active" href="#">Home</a>
+          <a class="navigation__link" href="#">Explore</a>
+          <a class="navigation__link" href="#">Contact Us</a>
+        </nav>
+
+        <div class="header__actions">
+          <button class="theme-toggle is-light" type="button" aria-label="Toggle theme">
+            <span class="theme-toggle__icon theme-toggle__icon--moon">
+              <img src="static/images/moon-icon.svg" width="24px" height="20px" alt="Moon" aria-hidden="true">
+            </span>
+
+            <span class="theme-toggle__icon theme-toggle__icon--sun">
+              <img src="static/images/sun-icon.svg" width="24px" height="20px" alt="Sun" aria-hidden="true">
+            </span>
+          </button>
+
+          <a class="header__button" href="#" aria-label="Корзина">
+  
+  <svg class="header__icon" aria-label="Cart" width="22" height="22">
+    <use xlink:href="/static/img/sprite.svg#cart"></use>
+  </svg></a>
+          <a class="header__button-login header__button--hidden" href="#">Login</a>
+        </div>
+      </div>
+
+      <form class="search" action="#" role="search">
+        <label class="search__field">
+          <img class="search__icon" src="/static/images/search.png" alt=""
+            aria-hidden="true">
+          <input class="search__input" type="search" name="q" placeholder="Search">
+        </label>
+      </form>
+
+      <section class="hero">
+        <span class="hero__glow hero__glow--left" aria-hidden="true"></span>
+        <span class="hero__glow hero__glow--right" aria-hidden="true"></span>
+        <div class="hero__content">
+          <h1 class="hero__title">Let`s Dive in <span>Music</span> World</h1>
+          <p class="hero__text hero__text--mobile">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc pharetra, phasellus
+          </p>
+          <p class="hero__text hero__text--desktop">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc pharetra, phasellus imperdiet fringilla
+            turpis lectus risus erat. Commodo purus, eu sed suspendisse fermentum
+          </p>
+          <div class="hero__buttons">
+            <a href="#" class="btn--primary">Shop now</a>
+            <a href="#" class="btn--secondary btn--with-icon">
+              <img class="btn__icon" src="/static/images/orange-cart.png" alt=""
+                aria-hidden="true">
+              <span>Add to cart</span>
+            </a>
+          </div>
+
+          <div class="hero__offers">
+            <article class="offer-card">
+              <img class="offer-card__img" src="/static/images/hero-headphone.png"
+                alt="Wireless headphones">
+              <div class="offer-card__body">
+                <h2 class="offer-card__title">Wireless headphones</h2>
+                <span class="offer-card__price">$120 <s>$185</s></span>
+              </div>
+            </article>
+
+            <article class="offer-card">
+              <img class="offer-card__img" src="/static/images/hero-headphone.png"
+                alt="Wireless headphones">
+              <div class="offer-card__body">
+                <h2 class="offer-card__title">Wireless headphones</h2>
+                <span class="offer-card__price">$120 <s>$185</s></span>
+              </div>
+            </article>
+
+            <article class="offer-card">
+              <img class="offer-card__img" src="/static/images/hero-headphone.png"
+                alt="Wireless headphones">
+              <div class="offer-card__body">
+                <h2 class="offer-card__title">Wireless headphones</h2>
+                <span class="offer-card__price">$120 <s>$185</s></span>
+              </div>
+            </article>
+          </div>
+        </div>
+        <button class="hero__scroll" type="button" aria-label="Scroll down">
+          <img class="hero__scroll-icon" src="/static/images/arrow-icon.png"
+            alt="Wireless headphones">
+        </button>
+      </section>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="main__wrap">
+      
+  <h1>Стайлгайд</h1>
+  <h2>Заголовок второго уровня</h2>
+  <h3>Заголовок третьего уровня</h3>
+  <h4>Заголовок h4</h4>
+  <h5>Заголовок h5</h5>
+  <h6>Заголовок h6</h6>
+  <p>Параграф текста, несколько слов в предложении для понимания.</p>
+  <table>
+    <tr>
+      <th>Шапка таблицы 1</th>
+      <th>Шапка таблицы 2</th>
+      <th>Шапка таблицы 3</th>
+    </tr>
+    <tr>
+      <td>td1</td>
+      <td>td2</td>
+      <td>td3</td>
+    </tr>
+  </table>
+  <form class="form">
+    <div class="form__control form__control--floating">
+    
+    
+    
+  
+  
+    <input class="form__text" id="n1" type="text" placeholder="Логин">
+  
+
+    
+  <label class="form__label" for="n1">Логин</label>
+
+    
+  </div>
+    <div class="form__control">
+    
+    
+    
+  
+  
+    <input class="form__text" id="n1" type="text" placeholder="Проверка">
+  
+
+    
+  <label class="form__label" for="n1">Проверка</label>
+
+    
+  </div>
+    <div class="form__control form__control--floating">
+      <input class="form__text" id="login" type="text" placeholder="Логин">
+      <label class="form__label" for="login">Логин</label>
+    </div>
+    <div class="form__control form__control--floating">
+      <input class="form__text" id="email" type="email" placeholder="Email">
+      <label class="form__label" for="email">Email</label>
+    </div>
+    <div class="form__control form__control--floating form__control--valid">
+      <input class="form__text" id="email_valid" type="email" placeholder="Email" value="a@a">
+      <label class="form__label" for="email_valid">Email</label>
+    </div>
+    <div class="form__control form__control--floating form__control--error">
+      <input class="form__text" id="email_invalid" type="email" placeholder="Email" value="a">
+      <label class="form__label" for="email_invalid">Email</label>
+    </div>
+    <div class="form__control">
+      <input class="form__text" placeholder="Обязательное поле" required>
+    </div>
+    <button class="form__submit" type="submit">Отправить</button>
+  </form>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__wrap">
+      <a class="footer__brand" href="#">
+        <img src="static/images/logo.png" width="150" height="150" alt="Musify logo">
+      </a>
+      <section class="footer__column">
+        <h2 class="footer__title">Shop</h2>
+        <a class="footer__item" href="#">Wireless</a>
+        <a class="footer__item" href="#">Headphone</a>
+        <a class="footer__item" href="#">Gaming</a>
+        <a class="footer__item" href="#">Speakers</a>
+        <a class="footer__item" href="#">Soundbars</a>
+        <a class="footer__item" href="#">Professional</a>
+        <a class="footer__item" href="#">Offer Zone</a>
+      </section>
+
+      <section class="footer__column">
+        <h2 class="footer__title">Support</h2>
+        <a class="footer__item" href="#">Order Status</a>
+        <a class="footer__item" href="#">Bulk Purchase Program</a>
+        <a class="footer__item" href="#">Buy Authentic</a>
+        <a class="footer__item" href="#">Product Support</a>
+        <a class="footer__item" href="#">Shipping &amp; Delivery</a>
+        <a class="footer__item" href="#">Cancellation &amp; Refund Policy</a>
+        <a class="footer__item" href="#">Service Center</a>
+      </section>
+
+      <section class="footer__column">
+        <h2 class="footer__title">About us</h2>
+        <a class="footer__item" href="#">Harman Corporate</a>
+        <a class="footer__item" href="#">Privacy Policy</a>
+        <a class="footer__item" href="#">Terms of Use</a>
+        <a class="footer__item" href="#">Why Buy Direct</a>
+        <a class="footer__item" href="#">JBL Sound Partners</a>
+        <h3 class="footer__title">Contact Us</h3>
+        <p class="footer__item">1800-102-0525</p>
+        <p class="footer__item">Mon–Sun-10AM–7PM</p>
+        <h4 class="footer__title">Manufactured by:</h4>
+        <p class="footer__item"> Harman International<br> Industries, Inc.<br>8500, Balboa Blvd,<br> Northridge, CA
+          91329,USA
+      </section>
+
+      <section class="footer__column">
+
+        <div class="footer__social">
+          <h2 class="footer__title">Share on Social Media</h2>
+          <div class="footer__social-container">
+            <a class="footer__social-item" href="#" aria-label="Google">
+              <img class="footer__social-img" src="/static/images/google.svg" alt="google">
+            </a>
+            <a class="footer__social-item" href="#" aria-label="Instagram">
+              <img class="footer__social-img" src="/static/images/instagram.svg"
+                alt="instagram">
+            </a>
+            <a class="footer__social-item" href="#" aria-label="Twitter">
+              <img class="footer__social-img" src="/static/images/twitter.svg"
+                alt="twitter">
+            </a>
+          </div>
+        </div>
+
+        <h2 class="footer__title">Subscribe to our Newsletter</h2>
+        <form class="footer__form">
+          <label class="footer__form-field">
+            <input class="footer__input" type="email" placeholder="Enter your mail id" required>
+          </label>
+          <button class="footer__button" type="submit">Subscribe</button>
+        </form>
+      </section>
+
+      <div class="footer__bottom">
+
+        <p class="footer__copy">©2022.Musify.All Rights Reserved</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    console.log('Привет из инлайн-скрипта, отрабатывает на всех страницах.');
+  </script>
+  <script src="/static/js/script.min.js"></script>
+
+  
+</body>
+
+</html>

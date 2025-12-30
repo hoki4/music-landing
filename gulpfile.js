@@ -248,7 +248,6 @@ export const start = series(
  */
 export const build = series(
   clean,
-  fonts,
   parallel(img, images, svgImages, styles, templates, scripts, sprite)
 
 );

@@ -2,11 +2,11 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ "main" ]   # или "master"
+    branches: [ "main" ]
   workflow_dispatch:
 
 permissions:
-  contents: write          # нужно, чтобы пушить в gh-pages
+  contents: write
 
 concurrency:
   group: "pages"
@@ -24,14 +24,12 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: "npm"
 
       - name: Install dependencies
-        run: npm i
+        run: npm install
 
       - name: Build
         run: npx gulp build
-        # если у тебя задача называется иначе — замени команду
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
@@ -39,5 +37,3 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
           publish_branch: gh-pages
-          # cname: example.com   # если нужен кастомный домен
-          # force_orphan: true  # иногда полезно, чтобы ветка была "чистой"

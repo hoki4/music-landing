@@ -13,7 +13,9 @@
 .card {
   margin-right: 30px;
   border: 1px solid var(--border);
-  border-radius: 50px;
+  border-radius: 40px;
+  overflow: hidden;
+  flex-shrink: 0;
   width: 250px;
   background: var(--surface);
   margin-bottom: 50px;
@@ -22,11 +24,12 @@
 
 .cards {
   display: flex;
+  margin-bottom: 100px;
 }
 
 .card__title {
   font-weight: 400;
-  font-size: 18px;
+  font-size: 16px;
   letter-spacing: 0.02em;
   color: var(--text);
   padding-left: 16px;
@@ -51,6 +54,7 @@
   font-size: 22px;
   letter-spacing: 0.02em;
   color: var(--c-accent);
+  padding-left: 12px;
 }
 
 .card__actions {
@@ -110,7 +114,6 @@
 .benefits {
   border-radius: 25px;
   padding: 32px 24px;
-
   background: var(--g-brand);
 
   display: flex;
@@ -118,7 +121,7 @@
   align-items: center;
 
   color: #ffffff;
-  margin-bottom: 60px;
+  margin-bottom: 150px;
 }
 
 .benefits__title {
@@ -161,7 +164,7 @@
 }
 
 .offer {
-  padding-top: 40px;
+  margin-bottom: 100px;
 }
 
 .offer__title {
@@ -172,6 +175,8 @@
 .section__title {
   text-align: center;
   color: var(--text);
+  margin-bottom: 50px;
+  font-size: 22px;
 }
 
 .offer__visual {
@@ -306,21 +311,21 @@
     grid-column: 2;
     margin-bottom: 0;
   }
+
+  .offer__image {
+    width: 470px;
+  }
 }
 
 .accessories {
   padding-top: 28px;
 }
 
-.accessories .section__title {
-  margin: 0 0 22px;
-}
-
 .accessories__grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 18px;
-  margin-bottom: 80px;
+  margin-bottom: 160px;
 }
 
 .accessories__item {
@@ -366,7 +371,7 @@
 
 .promo-card {
   flex: 0 0 250px;
-  border-radius: 50px;
+  border-radius: 30px;
   overflow: hidden;
 
   background: var(--c-purple-1);
@@ -374,6 +379,13 @@
   scroll-snap-align: start;
 
   box-shadow: 0 12px 30px rgba(0, 0, 0, .35);
+}
+
+@include media-min(lg) {
+  .promo-card {
+    flex: 0 0 330px;
+    margin: 0 auto;
+  }
 }
 
 .promo-card__image {
@@ -384,7 +396,14 @@
 }
 
 .promo-card__content {
-  padding: 18px;
+  padding: 0 0 22px 10px;
+  padding-top: 10px;
+}
+
+@include media-min(lg) {
+  .promo-card__content {
+    padding: 10px 0 23px 19px;
+  }
 }
 
 .promo-card__title {
@@ -422,7 +441,7 @@
 
 .promo-card__btn {
   height: 42px;
-  padding: 0 16px;
+  padding: 0 10px;
   border-radius: 999px;
 
   font-size: 13px;
@@ -433,6 +452,12 @@
   align-items: center;
   gap: 8px;
   white-space: nowrap;
+}
+
+@include media-min(lg) {
+  .promo-card__btn {
+    padding: 0 23px;
+  }
 }
 
 .promo-card__btn img {
@@ -450,6 +475,13 @@
   background: var(--c-brand);
   color: #fff;
   box-shadow: 0 6px 18px rgba(241, 74, 22, .6);
+  padding: 3px 27px;
+}
+
+@include media-min(lg) {
+  .promo-card__btn--primary {
+    padding: 3px 42px;
+  }
 }
 
 @include media-min(lg) {
